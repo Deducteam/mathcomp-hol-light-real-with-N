@@ -14,7 +14,6 @@ license: "CeCILL-2.1"
 depends: [
   "coq-mathcomp-classical" {>= "1.8.0"}
   "rocq-prover" {>= "9.0"}
-  "dune" {>= "3.18"} # https://gitlab.inria.fr/fpottier/menhir/-/issues/81
 ]
 build: [make "-j%{jobs}%"]
 install: [make "install"]

@@ -1,6 +1,6 @@
 # following https://github.com/coq-community/docker-coq-action
 
-name: Docker CI
+name: CI
 
 on:
   pull_request:
