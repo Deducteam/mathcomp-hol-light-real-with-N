@@ -129,9 +129,9 @@ check_proofs() {
 
 remove_empty_modules() {
     sed -e "s/${base}_//g" \
-        -e "/^Require Import ${root_path}\.theory_hol\.$/d" \
-        -e "/^Require Import ${root_path}\.types\.$/d" \
-        -e "/^Require Import ${root_path}\.axioms\.$/d" \
+        -e "/^Require \(Im\|Ex\)port ${root_path}\.theory_hol\.$/d" \
+        -e "/^Require \(Im\|Ex\)port ${root_path}\.types\.$/d" \
+        -e "/^Require \(Im\|Ex\)port ${root_path}\.axioms\.$/d" \
         $1
 }
 
