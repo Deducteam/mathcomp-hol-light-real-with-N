@@ -9,7 +9,7 @@
 (*              (c) Copyright, John Harrison 1998-2007                       *)
 (* ========================================================================= *)
 
-let hol_version = "3.0.0+";;
+let hol_version = "3.1.0";;
 
 #directory "+compiler-libs";;
 
@@ -69,12 +69,20 @@ else loads "hol_lib_upto_real.ml";;
 
 #install_printer pp_print_fpf;;
 
-#install_printer pp_print_qtype;;
-#install_printer pp_print_qterm;;
-#install_printer pp_print_thm;;
+let set_color_printer (use_color:bool) =
+  let printers =
+    if use_color
+    then ["pp_print_colored_qterm"; "pp_print_colored_qtype";
+          "pp_print_colored_thm"; "pp_print_colored_goal";
+          "pp_print_colored_goalstack"]
+    else ["pp_print_qterm"; "pp_print_qtype"; "pp_print_thm"; "pp_print_goal";
+          "pp_print_goalstack"] in
+  let _ = map (fun name ->
+      Topdirs.dir_install_printer Format.std_formatter (Lident name))
+    printers in
+  ();;
 
-#install_printer pp_print_goal;;
-#install_printer pp_print_goalstack;;
+set_color_printer true;;
 
 (* ------------------------------------------------------------------------- *)
 (* The help system.                                                          *)

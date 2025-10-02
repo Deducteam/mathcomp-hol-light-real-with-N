@@ -16,7 +16,6 @@ camlp5_version=8.03.06
 hollight_file=hol_upto_real.ml
 base=`basename $hollight_file .ml`
 dump_simp_option=-before-hol
-opam_file=mathcomp-hollight-real-with-N.opam
 root_path=MathComp_HOLLight_Real_With_N
 jobs='-j32'
 
