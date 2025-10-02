@@ -302,7 +302,6 @@ Ltac align_ε :=
    - Lemma if_elim destructs hypothesis [if P then Q else R]
      as if it were (P /\ Q) \/ (~P /\ R) *)
 
-
 Lemma if_True (A : Type) (x y : A) : (if True then x else y) = x.
 Proof.
   by rewrite/asbool ; case pselect.
@@ -458,7 +457,6 @@ Ltac align_ε_if :=
       | |- forall x y z, (if `[<?P>] then ?f else _) = _ =>
              apply (align_ε_if3 (fun x y z => P) (fun x y z => f)) end end
   in aux.
-
 
 (****************************************************************************)
 (* For inductive propositions. *)
@@ -2143,7 +2141,6 @@ HB.instance Definition _ A := is_Type' (@BOTTOM A).
   - Defined with recspace A (for the one external argument in cons).
   - nil is the first constructor, so nil = CONSTR 0 (ε (fun _ => True)) Fnil.
   - cons is the second one, so cons a l = CONSTR 1 a (FCONS l Fnil). *)
-
 
 Definition Fnil {A : Type} : N -> recspace A := fun _ => BOTTOM.
 

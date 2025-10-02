@@ -4,7 +4,7 @@ set -e # to exit as soon as there is an error
 
 hollight_version=3.0.0 # for dependencies
 hollight_commit=bed58fa
-hol2dk_commit=303dfb5
+hol2dk_commit=15b042c
 lambdapi_commit=c1cb2edf
 ocaml_version=5.3.0
 rocq_version=9.0.0
