@@ -1,7 +1,9 @@
+Set Warnings "none".
 From mathcomp Require Import ssreflect ssrfun ssrbool eqtype ssrnat choice.
 From mathcomp Require Import boolp classical_sets functions.
 From Stdlib Require Import BinNat List ProofIrrelevance Lia PeanoNat Ascii Setoid.
 Require Import Corelib.Init.Wf HB.structures.
+Set Warnings "default,-redundant-canonical-projection".
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.
@@ -116,6 +118,7 @@ Tactic Notation "exist" uconstr(x1) uconstr(x2) uconstr(x3) uconstr(x4) uconstr(
 (* Coercion from Prop to bool? *)
 (****************************************************************************)
 
+#[warnings = "-ambiguous-paths"]
 Coercion asbool : Sortclass >-> bool.
 
 Ltac booleqsimp := rewrite ?eqb_id ?eqbF_neg.
@@ -3128,3 +3131,4 @@ Lemma axiom_24 : forall (r : (prod hreal hreal) -> Prop), ((fun s : (prod hreal 
 Proof. exact (dest_mk_quotient treal_eq). Qed.
 
 End HL.
+Set Warnings "redundant-canonical-projection".
