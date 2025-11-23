@@ -631,7 +631,7 @@ Ltac _dest_inj_inductive :=
     induction x ; induction x' ; simpl ; intro e ;
     (* e is of the form "CONSTR n a f = CONSTR n' a' f'", so inversion
        gives hypotheses n=n' , a=a' and f=f'. *)
-    inversion e ; auto ;
+    inversion e ;
     repeat rewrite -> FCONS_inj in * ; (* f and f' should represent lists of recursive calls
                                        so we transform their equality into equality of
                                        each recursive call (so of the form
