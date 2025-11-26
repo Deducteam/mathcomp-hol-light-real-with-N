@@ -13,7 +13,6 @@ lambdapi_commit=3.0.0
 camlp5_version=8.03.06
 ocaml_version=5.3.0
 rocq_version=9.0.0
-camlp5_version=8.04.00
 
 hollight_file=hol_upto_real.ml
 base=`basename $hollight_file .ml`
